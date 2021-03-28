@@ -18,20 +18,29 @@ def cipher(data, key, mode):
     # Return the ciphered text
     return new_data
 
-# Select input mode (encryption or decryption)
-mode = input("Are you (E)ncrypting or (D)ecrypting? ")
+run = "Yes"
+while run == "Yes":
+    try:
+       
+        # Select input mode (encryption or decryption)
+        mode = input("Are you (E/e)ncrypting or (D/d)ecrypting? ")
 
-# Encrypt text
-if mode == "E":
-    key = int(input("What would you like the cipher key to be? "))
-    string = input("Insert message to be encrypted: ")
-    encrypted = cipher(string, key, 1)
-    print("Cipher: ", encrypted)
+        # Encrypt text
+        if mode == "E" or "e":
+            key = int(input("What would you like the cipher key to be? "))
+            string = input("Insert message to be encrypted: ")
+            encrypted = cipher(string, key, 1)
+            print("Cipher: ", encrypted)
+        else:
+            key = int(input("What would you like the cipher key to be? "))
+            string = input("Insert cipher to be decrypted: ")
+            decrypted = cipher(string, key, 0)
+            print("Decrypted message: ", decrypted)
 
-# Decrypt cipher
-elif mode == "D":
-    key = int(input("What would you like the cipher key to be? "))
-    string = input("Insert cipher to be decrypted: ")
-    decrypted = cipher(string, key, 0)
-    print("Decrypted message: ", decrypted)
+        run = input("Would you like to run this program again? (Yes/No): ")
 
+        if run == "No":
+            break
+   
+    except:
+        ValueError
