@@ -18,8 +18,18 @@ def cipher(data, key, mode):
     # Return the ciphered text
     return new_data
 
+def mode(question):
+    valid = False
+    while not valid:
+        mode = input(question)
+
+        if mode == "E" or "D":
+            return mode
+        else:
+            print("Sorry, this is not a valid option.")
+
 # Select input mode (encryption or decryption)
-mode = input("Are you (E)ncrypting or (D)ecrypting? ")
+mode("Are you (E)ncrypting or (D)ecrypting? ")
 
 # Encrypt text
 if mode == "E":
