@@ -1,4 +1,5 @@
-# A simple En-/De-crypting program using a Caesar Cipher 
+# A simple En-/De-crypting program using a Caesar Cipher
+
 
 # Function for encryption and decryption
 def cipher(data, key, mode):
