@@ -35,3 +35,6 @@ elif mode == "D":
     string = input("Insert cipher to be decrypted: ")
     decrypted = cipher(string, key, 0)
     print("Decrypted message: ", decrypted)
+
+else:
+    print("This is not a valid option. Start again.")
